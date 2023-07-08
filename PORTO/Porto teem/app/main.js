@@ -18,29 +18,44 @@ teamMembers.map((item, index) => {
         >${item.paragraph}</span
       >
       <span class="thumb-info-social-icons mb-4">
-      <a href="${item.social_icon.map((midea) => {
-        let = `${midea.link}`;
-      })}"
-      ><i class="${item.social_icon.facebook}"></i><span>${
-    item.social_icon.name
-  }</span></a
-      >
 
+      ${
+        `facebook` in item.social
+          ? `<a target="_blank" href="${item.social.facebook}">
+        <i class="fab fa-facebook-f"></i>
+        <span>Facebook</span>
+      </a>`
+          : ""
+      }
+    
 
-      </span>
+    ${
+      "linkedin" in item.social
+        ? `<a href="${item.social.linkedin}">
+        <i class="fab fa-linkedin-in"></i>
+        <span>Linkedin</span>
+      </a>`
+        : ""
+    }
+    ${
+      "twitter" in item.social
+        ? `<a href="${item.social.twitter}">
+        <i class="fab fa-twitter"></i>
+        <span>Linkedin</span>
+      </a>`
+        : ""
+    }
+
+    </span>
     </span>
   </span>
 </div>
   `;
+  console.log(item.social.linkedin);
 });
 
 teamS.innerHTML = team_items;
 {
-  /* <a href="https://www.twitter.com/"
-><i class="fab fa-twitter"></i><span>Twitter</span></a
->
-<a href="http://www.linkedin.com/"
-><i class="fab fa-linkedin-in"></i
-><span>Linkedin</span></a
+  /* 
 > */
 }
